@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak, 100vh sayfanın dikey olarak tamamını kaplasın*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+}
+
+.container{
+    display : flex;
+    /* yanyana dizilir, column için ayrıca yazmak lazım*/
+    width: 90vw;
+    /* yatay olarak sayfanın 90% sini kaplasın */
+
+
+}
+
+.panel{
+    background-size: auto 100%;
+    /* panel div inin içinin tamamını doldursun*/
+    background-position: center;
+    /* merkeze odaklansın*/
+    background-repeat: no-repeat;
+    /* içinde tekrarlamasın */
+    height: 80vh;
+    /* görülen alanın %80 ini kaplasın */
+    border-radius: 50px;
+    color: whitesmoke;
+    cursor: pointer;
+    flex : 0.5;
+    /* sayfada ne kadarlık yer kaplayacak, flex direction düzeninde*/
+    margin: 10px;
+    position: relative;
+    /* panellerin pozisyonu değişken olacak*/
+    transition : flex 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    /* position: relative; */
+    /* panel içindeki h3 ün pozisyonu panel içine göre sabit olacak yani panele bağlı olacak, yani panelle beraber hareket edecek, eğer bu da relative olsaydı panelden bağımsız olurdu*/
+    bottom: 20px;
+    left: 20px;
+    /* h3 panelin kendi sınırına göre b20, l20 olacak */
+    margin: 0;
+    opacity: 0;
+    /* opacity 0 yaptık active olduğunda opacity 1 olacak, hangi panel aktif ise onun h3 ü görünecek */
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity : 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width:480px){
+    /* genişlik 480px in altına düştüğünde olacaklar */
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),.panel:nth-of-type(5){
+        display: none;
+    }
+}
