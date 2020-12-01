@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+:root {
+    --line-border-fill : #3498db;
+    --line-border-empty : #e0e0e0; 
+}
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    background-image: linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% );
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+}
+
+.container{
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    /* divleri birbirlerinden ayırsın*/
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before {
+    content : '';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    /* progress-container ın orta yüksekliğinde olacak*/
+    top : 50%;
+    left: 0;
+    /* en soldan başlayacak*/
+    transform: translateY(-50%);
+    /* tam ortada olacak dikeyde*/
+    height: 4px;
+    width: 100%;
+    /* div in yarısı kadarlık yeri kaplayacak, js ile değişecek buradaki değerler*/
+    z-index: -100;
+    /* altta kalacak*/
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    /* progress-container ın orta yüksekliğinde olacak*/
+    top : 50%;
+    left: 0;
+    /* en soldan başlayacak*/
+    transform: translateY(-50%);
+    /* tam ortada olacak dikeyde*/
+    height: 4px;
+    width: 0%;
+    /* div in yarısı kadarlık yeri kaplayacak, js ile değişecek buradaki değerler*/
+    z-index: -100;
+    /* altta kalacak*/
+    transition: 0.4s ease;
+}
+
+.circle{
+    background-color: whitesmoke;
+    color : #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border : 3px solid var(--line-border-empty) ;
+    transition: .4s ease
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: whitesmoke;
+    border : 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn.active{
+    transform: scale(0.90);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+}
