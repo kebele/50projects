@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+}
+
+.search{
+    position: relative;
+    height: 50px;
+}
+
+.search .input{
+    color: black;
+    border : 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;transition : width 0.3s ease;
+}
+
+.btn{
+    background-color: whitesmoke;
+    border : 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition : transform 0.3s ease;
+}
+
+.btn:focus, input:focus{
+    outline : none;
+}
+
+.search.active .input{
+    width: 200px;
+}
+
+.search.active .btn{
+    transform : translateX(198px);
+}
