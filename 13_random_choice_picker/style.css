@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    background-color: teal;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+}
+
+h3{
+    color : whitesmoke;
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.container{
+    width: 500px;
+}
+
+textarea{
+    border : none;
+    display : block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0 0 20px;
+    font-size: 16px;
+}
+
+.tag{
+    background-color: rgb(24, 167, 31);
+    color: black;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 0 5px 10px 0;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.tag.highlight{
+    background-color: orange;
+}
