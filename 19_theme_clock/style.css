@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+  }
+  
+  /*           DARK MODE            */
+  html {
+    transition: all 0.5s ease-in;
+  }
+  
+  html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+  }
+  
+  html.dark {
+    background-color: #111;
+    color: var(--primary-color);
+  }
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+
+}
+
+.toggle {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    position: absolute;
+    /* top: 100px; */
+    bottom: 200px;
+  }
+  
+  .toggle:focus {
+    outline: none;
+  }
+  
+  .clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* saatin zemini */
+  .clock {
+    position: relative;
+    width: 215px;
+    height: 215px;
+    border : 4px solid teal;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 2px 46px 13px rgba(0,0,0,0.43); 
+    box-shadow: 0px 2px 46px 13px rgba(0,0,0,0.43);
+  }
+  
+  /* ssatin kolları */
+  .needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+  }
+  
+  /* pozisyonlarını ayarlamak için rotate değerini js de değiştireceğiz */
+  .needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+    width: 8px;
+    border-radius: 10px;
+  }
+  
+  .needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    width: 4px;
+    height: 80px;
+  }
+  
+  .needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 90px;
+    background-color: #e74c3c;
+  }
+  
+  .center-point {
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* ortalamak için position,top,left */
+    border-radius: 50%;
+  }
+  
+  .center-point::after {
+    content: '';
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .time {
+    font-size: 60px;
+  }
+  
+  .date {
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  
+
+  /* .date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+  } */
