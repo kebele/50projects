@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+
+}
+
+
+canvas {
+    border: 2px solid steelblue;
+  }
+  
+  .toolbox {
+    background-color: steelblue;
+    border: 1px solid slateblue;
+    display: flex;
+    width: 804px;
+    padding: 1rem;
+  }
+  
+  /* toolbox un children ları için hepsine geçerli olsun */
+  .toolbox > * {
+    background-color: #fff;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    cursor: pointer;
+  }
+  
+ 
+  .toolbox > *:last-child {
+    margin-left: auto;
+     /* en sağa atar */
+  }
