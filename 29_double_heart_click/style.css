@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* yatay hizalama, center */
+    /* justify-content: center; */
+    /* dikey hizalama, center */
+    /* height: 100vh; */
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+    text-align: center;
+}
+
+h2 {
+    margin : 50px;
+    text-align: center;
+  }
+  
+  .small {
+    display: block;
+    margin : 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  #times {
+      color: red;
+      font-size: 24px;
+      font-weight: bold;
+  }
+  
+  .fa-heart {
+    color: red;
+  }
+  
+  .loveMe {
+    height: 440px;
+    width: 300px;
+    background: url(pexels-muhammet-ali-ceylan-3656637.jpg)
+      no-repeat center center/cover;
+      /* resmin sonrasına dikkat */
+    margin: auto;
+    cursor: pointer;
+    max-width: 100%;
+    position: relative;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  
+  /* resmin içinde çıkacak tıkladığımız yeri merkeze alıp animasyonlu büyüyen ve kaybolan kalp */
+  .loveMe .fa-heart {
+    position: absolute;
+    animation: grow 0.6s linear;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  
+  @keyframes grow {
+    to {
+      transform: translate(-50%, -50%) scale(10);
+      opacity: 0;
+    }
+  }
