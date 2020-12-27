@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+}
+
+.toggle-container{
+    display:flex;
+    align-items: center;
+    width: 200px;
+    margin : 10px 0;
+}
+
+.toggle {
+    /* burası check box ların olduğu kısım, bunların görünürlüğünü yok ediyoruz
+    input olan kısım */
+  visibility: hidden;
+}
+
+.label {
+  position: relative;
+  background-color: #d0d0d0;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px 0;
+  width: 80px;
+  height: 40px;
+}
+
+/* input checked yapıldığında labelk ın bacgrounda da değişsin, label in bacgroundu da */
+.toggle:checked + .label {
+  background-color: #8e44ad;
+}
+/* input>label içine .ball topu yapalım */
+.ball {
+  background: #fff;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;
+  /* default durumu slideOff */
+}
+
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;
+  background: yellow;
+}
+
+@keyframes slideOn {
+    
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(40px) scale(1);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
