@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    background-color:#111;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    /* overflow: hidden; */
+    /* scroll bar görünmesin */
+
+}
+
+.phone {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #eee;
+    border-radius: 15px;
+    height: 600px;
+    width: 340px;
+  }
+  
+  .phone .content {
+    opacity: 0;
+    /* ne varsa göstermesin */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 60px);
+    /* alt tarafta 60 px bıraksın */
+    width: 100%;
+    transition: opacity 0.4s ease;
+  }
+  
+  .phone .content.show {
+    opacity: 1;
+    /* content e show class ı gelince opacity 1 olsun */
+  }
+  
+  nav {
+      /* en altta sabit olsun */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: -5px;
+    width: 100%;
+  }
+  
+  nav ul {
+    background-color: whitesmoke;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 60px;
+  }
+  
+  nav li {
+    color: #777;
+    cursor: pointer;
+    flex: 1;
+    /* bir satıra yayılsın */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav ul li p {
+    font-size: 12px;
+    margin: 2px 0;
+  }
+  
+  nav ul li:hover,
+  nav ul li.active {
+    color: #8e44ad;
+  }
