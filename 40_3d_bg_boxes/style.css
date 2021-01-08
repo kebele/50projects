@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing : border-box;
+}
+
+body{
+    background-color: #111;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* yatay hizalama, center */
+    justify-content: center;
+    /* dikey hizalama, center */
+    height: 100vh;
+    /* sayfanın tam ortası için, align-items center, justify-content center, height 100vh olacak*/
+    overflow: hidden;
+    /* scroll bar görünmesin */
+}
+
+.magic{
+    background-color:teal;
+    color: whitesmoke;
+    border : 0;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 12px 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+
+.magic:focus{
+    outline: none;
+}
+
+.magic:active{
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+/* tuşa basınca boxes a bir class eklenecek ve kutular birbirinden ayrılacak, yani w,h büyüyecek, tekrar basınca o class gidecek, kutular ...  */
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transition: .4s ease;
+}
+
+.boxes.big{
+    width: 600px;
+    height: 600px;
+}
+
+.boxes.big .box{
+    transform : rotateZ(360deg)
+}
+
+.box {
+    /* background: yellow; */
+    background-image: url('https://media.giphy.com/media/yO29ziVycKhjEtPk7z/giphy.gif');
+    /* bu şekilde bütün kutularda aynısı oynar */
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    position: relative;
+    height: 125px;
+    width: 125px;
+    transition: .4s ease;
+}
+
+.box::after {
+    /* content: 'hello'; */
+    content: '';
+    background-color: steelblue;
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    height: 100%;
+    width: 15px;
+    transform : skewY(45deg)
+    /* sağ taraftaki skew */
+}
+
+.box::before {
+    /* content: 'hello'; */
+    content: '';
+    background-color: rgb(38, 93, 138);
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    height: 15px;
+    width: 100%;
+    transform : skewX(45deg)
+    /* sağ taraftaki skew */
+}
